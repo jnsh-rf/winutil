@@ -103,7 +103,7 @@
 
       Remove-Item ViVeTool -Recurse
 
-      Write-Host 'Old start menu reverted please restart your computer to take effect'
+      Write-Host 'Old start menu reverted. Please restart your computer to take effect.'
       "
     ],
     "UndoScript": [
@@ -117,7 +117,7 @@
 
       Remove-Item ViVeTool -Recurse
 
-      Write-Host 'New start menu reverted please restart your computer to take effect'
+      Write-Host 'New start menu reverted. Please restart your computer to take effect.'
       "
     ],
     "link": "https://winutil.christitus.com/dev/tweaks/essential-tweaks/revertstartmenu"
@@ -1490,7 +1490,7 @@
       Remove-Item \"$Env:LocalAppData\\Microsoft\\OneDrive\" -Recurse -Force
       Remove-Item \"C:\\ProgramData\\Microsoft OneDrive\" -Recurse -Force
 
-      # Grant back permission to accses OneDrive folder
+      # Grant back permission to access OneDrive folder
       icacls $Env:OneDrive /grant \"Administrators:(D,DC)\"
 
       # Disable OneSyncSvc
@@ -2030,7 +2030,7 @@
     "InvokeScript": [
       "
       New-Item -Path \"HKCU:\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\" -Name \"InprocServer32\" -force -value \"\"
-      Write-Host Restarting explorer.exe ...
+      Write-Host 'Restarting explorer.exe ...'
       Stop-Process -Name \"explorer\" -Force
       "
     ],
@@ -2038,7 +2038,7 @@
       "
       Remove-Item -Path \"HKCU:\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\" -Recurse -Confirm:$false -Force
       # Restarting Explorer in the Undo Script might not be necessary, as the Registry change without restarting Explorer does work, but just to make sure.
-      Write-Host Restarting explorer.exe ...
+      Write-Host 'Restarting explorer.exe ...'
       Stop-Process -Name \"explorer\" -Force
       "
     ],
@@ -2685,7 +2685,7 @@
       New-ItemProperty -Path $allFolders -Name \"FolderType\" -Value \"NotSpecified\" -PropertyType String -Force
       Write-Host \"Set FolderType to NotSpecified\"
 
-      Write-Host Please sign out and back in, or restart your computer to apply the changes!
+      Write-Host 'Please sign out and back in, or restart your computer to apply the changes!'
       "
     ],
     "UndoScript": [
@@ -2703,7 +2703,7 @@
       Remove-Item -Path $bagMRU -Recurse -Force
       Write-Host \"Removed $bagMRU\"
 
-      Write-Host Please sign out and back in, or restart your computer to apply the changes!
+      Write-Host 'Please sign out and back in, or restart your computer to apply the changes!'
       "
     ],
     "link": "https://winutil.christitus.com/dev/tweaks/essential-tweaks/disableexplorerautodiscovery"
