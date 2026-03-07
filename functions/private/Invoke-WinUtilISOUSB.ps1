@@ -5,7 +5,7 @@ function Invoke-WinUtilISORefreshUSBDrives {
     $combo.Items.Clear()
 
     if ($removable.Count -eq 0) {
-        $combo.Items.Add("No USB drives detected")
+        $combo.Items.Add("No USB drives detected.")
         $combo.SelectedIndex = 0
         $sync["Win11ISOUSBDisks"] = @()
         Write-Win11ISOLog "No USB drives detected."

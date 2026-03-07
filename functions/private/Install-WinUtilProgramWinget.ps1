@@ -71,7 +71,7 @@ Function Install-WinUtilProgramWinget {
             Write-Host "$($Program) installed successfully."
             return $true
         } elseif ($status -eq -1978335189) {
-            Write-Host "$($Program) No applicable update found"
+            Write-Host "$($Program) No applicable update found."
             return $true
         }
 

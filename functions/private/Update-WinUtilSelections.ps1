@@ -47,7 +47,7 @@ function Update-WinUtilSelections {
                 }
             }
             default {
-                Write-Host "Unknown group for checkbox: $($cbkey)"
+                Write-Host "Unknown group for checkbox: $($cbkey)."
             }
         }
     }
