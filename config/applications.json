@@ -787,7 +787,7 @@
         "category": "Multimedia Tools",
         "choco": "lightshot",
         "content": "Lightshot (Screenshots)",
-        "description": "Ligthshot is an easy-to-use, light-weight screenshot software tool, where you can optionally edit your screenshots using different tools, share them via Internet and/or save to disk, and customize the available options.",
+        "description": "Lightshot is an easy-to-use, light-weight screenshot software tool, where you can optionally edit your screenshots using different tools, share them via Internet and/or save to disk, and customize the available options.",
         "link": "https://app.prntscr.com/",
         "winget": "Skillbrains.Lightshot"
     },
