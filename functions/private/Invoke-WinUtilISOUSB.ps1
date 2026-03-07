@@ -26,7 +26,7 @@ function Invoke-WinUtilISOWriteUSB {
     $usbDisks    = $sync["Win11ISOUSBDisks"]
 
     if (-not $contentsDir -or -not (Test-Path $contentsDir)) {
-        [System.Windows.MessageBox]::Show("No modified ISO content found.  Please complete Steps 1-3 first.", "Not Ready", "OK", "Warning")
+        [System.Windows.MessageBox]::Show("No modified ISO content found. Please complete Steps 1-3 first.", "Not Ready", "OK", "Warning")
         return
     }
 

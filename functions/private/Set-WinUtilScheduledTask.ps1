@@ -21,11 +21,11 @@ function Set-WinUtilScheduledTask {
 
     try {
         if($State -eq "Disabled") {
-            Write-Host "Disabling Scheduled Task $Name..."
+            Write-Host "Disabling Scheduled Task $Name"
             Disable-ScheduledTask -TaskName $Name -ErrorAction Stop
         }
         if($State -eq "Enabled") {
-            Write-Host "Enabling Scheduled Task $Name..."
+            Write-Host "Enabling Scheduled Task $Name"
             Enable-ScheduledTask -TaskName $Name -ErrorAction Stop
         }
     } catch [System.Exception] {

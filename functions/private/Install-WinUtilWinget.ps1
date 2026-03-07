@@ -11,7 +11,7 @@ function Install-WinUtilWinget {
         return
     }
 
-    Write-Host "Winget is not Installed. Installing." -ForegroundColor Red
+    Write-Host "Winget is not installed. Installing now..." -ForegroundColor Red
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
     Install-PackageProvider -Name NuGet -Force

@@ -71,7 +71,7 @@ Function Install-WinUtilProgramWinget {
             Write-Host "$($Program) installed successfully."
             return $true
         } elseif ($status -eq -1978335189) {
-            Write-Host "$($Program) No applicable update found."
+            Write-Host "No applicable update found for $($Program)."
             return $true
         }
 
@@ -130,6 +130,6 @@ Function Install-WinUtilProgramWinget {
         }
     }
 
-    Set-WinUtilProgressBar -label "$($Action)ation done" -percent 100
+    Set-WinUtilProgressBar -label "$($Action) action done." -percent 100
     return $failedPackages
 }
