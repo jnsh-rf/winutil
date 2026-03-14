@@ -261,7 +261,7 @@
         "category": "Utilities",
         "choco": "citrix-workspace",
         "content": "Citrix Workspace app",
-        "description": "a secure, unified client application that provides instant access to virtual desktops, SaaS, web, and Windows apps from any device (Windows, macOS, Linux, iOS, Android) or browser.",
+        "description": "A secure, unified client application that provides instant access to virtual desktops, SaaS, web, and Windows apps from any device (Windows, macOS, Linux, iOS, Android) or browser.",
         "link": "https://www.citrix.com/downloads/workspace-app/",
         "winget": "Citrix.Workspace",
     },
@@ -1944,7 +1944,7 @@
         "category": "Document",
         "choco": "pdfxchangeeditor",
         "content": "PDF-XChangeEditor",
-        "description": "a comprehensive Windows-based software suite and editor for creating, viewing, editing, annotating, and signing PDF files.",
+        "description": "A comprehensive Windows-based software suite and editor for creating, viewing, editing, annotating, and signing PDF files.",
         "link": "https://www.pdf-xchange.com/",
         "winget": "TrackerSoftware.PDF-XChangeEditor"
     },
