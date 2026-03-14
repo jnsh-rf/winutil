@@ -21,7 +21,7 @@ function Invoke-WinUtilScript {
     )
 
     try {
-        Write-Host "Running Script for $Name..."
+        Write-Host "Running Script for $Name"
         Invoke-Command $scriptblock -ErrorAction Stop
     } catch [System.Management.Automation.CommandNotFoundException] {
         Write-Warning "The specified command was not found."
