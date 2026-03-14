@@ -523,7 +523,7 @@
         "category": "Utilities",
         "choco": "ditto",
         "content": "Ditto",
-        "description": "Ditto is an extension to the standard windows clipboard.",
+        "description": "Ditto is an extension to the standard Windows Clipboard.",
         "link": "https://github.com/sabrogden/Ditto",
         "winget": "Ditto.Ditto",
         "foss": true
