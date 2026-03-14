@@ -24,7 +24,7 @@ toc: true
 
 * Pull requests are now handled directly on the **MAIN branch**. This was done since we can now select specific releases to launch via releases in GitHub.
 
-* If you're doing code changes, then you can submit a PR to `main` branch, but I am very selective about these.
+* If you're doing code changes, then you can submit a PR to the `main` branch, but I am very selective about these.
 
 > [!IMPORTANT]
 > Do not use a code formatter, make massive amounts of line changes, or make multiple feature changes. EACH FEATURE CHANGE SHOULD BE IT'S OWN PULL REQUEST!
@@ -85,7 +85,7 @@ graph TD
 
 ### Testing your changes
 
-* To test to see if your changes work as intended run following commands in a powershell terminal as admin:
+* To test to see if your changes work as intended, run the following commands in a PowerShell terminal as admin:
 
 * Change the directory where you are running the commands to the forked project.
 * `cd {path to the folder with the compile.ps1}`
