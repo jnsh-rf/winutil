@@ -1,0 +1,60 @@
+name: Clean Release Notes with Copilot
+
+on:
+  release:
+    types: [created, edited]
+
+jobs:
+  clean-notes:
+    if: github.event.release.draft == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 1. Extract Release Drafter's categorized output
+      - name: Get Release Body
+        id: release-body
+        run: |
+          BODY="${{ github.event.release.body }}"
+          echo "content<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # 2. Pass Release Drafter's output + code diffs to Copilot for formatting
+      - name: Rewrite Notes with Copilot
+        id: copilot-format
+        uses: github/copilot-release-notes@v1
+        with:
+          instructions: |
+            You are a technical writer cleaning up automatically generated release notes.
+            
+            Your task:
+            1. Preserve the category structure (### 🚀 Features, ### 🐛 Bug Fixes, etc.)
+            2. For each bullet point:
+               - Standardize verbs: Rewrite items to start with an imperative verb (Add, Fix, Update, Change, Remove, Improve)
+               - Clean up titles: Remove conversational fluff, redundant phrases, and PR metadata from the sentence itself
+               - Enhance clarity: Use code diffs context to explain the actual impact when PR titles are uninformative
+               - Maintain tone: Keep all items under the same category with consistent capitalization and voice
+            3. Keep PR links/numbers exactly as they appear at the end of each line
+            4. Do NOT remove or reorganize category headings
+            
+            Input Release Notes to fix: 
+            ${{ steps.release-body.outputs.content }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Update the Draft with Copilot's polished version
+      - name: Update GitHub Release Draft
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          body: ${{ steps.copilot-format.outputs.release-notes }}
+          draft: true
+          append_body: false
